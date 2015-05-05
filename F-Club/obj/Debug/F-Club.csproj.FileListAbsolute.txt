@@ -1,0 +1,6 @@
+c:\users\yolomancer\documents\visual studio 2013\Projects\F-Club\F-Club\bin\Debug\F-Club.exe.config
+c:\users\yolomancer\documents\visual studio 2013\Projects\F-Club\F-Club\bin\Debug\F-Club.exe
+c:\users\yolomancer\documents\visual studio 2013\Projects\F-Club\F-Club\bin\Debug\F-Club.pdb
+c:\users\yolomancer\documents\visual studio 2013\Projects\F-Club\F-Club\obj\Debug\F-Club.exe
+c:\users\yolomancer\documents\visual studio 2013\Projects\F-Club\F-Club\obj\Debug\F-Club.pdb
+c:\users\yolomancer\documents\visual studio 2013\Projects\F-Club\F-Club\obj\Debug\F-Club.csprojResolveAssemblyReference.cache
