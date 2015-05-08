@@ -50,6 +50,7 @@
     <Compile Include="SeasonalProduct.cs" />
     <Compile Include="Stregsystem.cs" />
     <Compile Include="StregsystemCLI.cs" />
+    <Compile Include="StregsystemCommandParser.cs" />
     <Compile Include="Transaction.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>

@@ -8,13 +8,20 @@ namespace F_Club
 {
     class StregsystemCLI : IStregsystemUI
     {
+        bool CLIactive;
         Stregsystem system;
-        public void Start()
+        public void Start(StregsystemCommandParser parser)
         {
+            bool CLIactive = true;
+            while(CLIactive)
+            { 
             List<Product> activeProducts = new List<Product>(system.GetActiveProducts());
             foreach(Product product in activeProducts)
             {
                 Console.WriteLine(product.ToString());
+            }
+            string command = Console.ReadLine();
+            parser.ParseCommand(command);
             }
         }
 

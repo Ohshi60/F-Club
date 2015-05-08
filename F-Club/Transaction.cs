@@ -8,7 +8,7 @@ namespace F_Club
 {
     public abstract class Transaction
     {
-        private static int numberOfTransactions = 0;
+        private static int numberOfTransactions = 1;
         private int _transactionID;
         private User _user;
         private DateTime _date;
@@ -21,6 +21,10 @@ namespace F_Club
         public override string ToString()
         {
             return  _transactionID.ToString() + (_amount/100).ToString() + _date.ToString();
+        }
+        public virtual void Execute()
+        {
+
         }
     }
 }

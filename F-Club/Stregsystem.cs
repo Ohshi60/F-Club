@@ -12,17 +12,22 @@ namespace F_Club
         private List<User> _users = new List<User>();
         private List<Product> _products = new List<Product>();
         private List<Transaction> _transactions = new List<Transaction>();
-        public void BuyProduct(User user, Product product)
+        public BuyTransaction BuyProduct(User user, Product product)
         {
             BuyTransaction bt = new BuyTransaction{ 
+                Product = product,
                 Amount = product.Price,
                 transactionUser = user,
                 Date = DateTime.Now,
             };
-            bt.Execute();
-            _transactions.Add(bt);
+            return bt;
         }
-        public void AddCreditsToAccount(User user, int amount)
+        public void ExecuteTransaction(Transaction t)
+        {
+            t.Execute();
+            _transactions.Add(t);
+        }
+        public InsertCashTransaction AddCreditsToAccount(User user, int amount)
         {
             InsertCashTransaction deposit = new InsertCashTransaction
             {
@@ -30,8 +35,7 @@ namespace F_Club
                 Amount = amount,
                 Date = DateTime.Now,
             };
-            deposit.Execute();
-            _transactions.Add(deposit);
+            return deposit;
         }
         public Product GetProduct(int productID)
         {
@@ -100,6 +104,8 @@ namespace F_Club
         {
             this.LoadCatalogue();
             List<Product> activeProds = new List<Product>(GetActiveProducts());
+            _users.Add(new User("Benny","Johnson","abe@kat.dk","benny1"));
+            GetUser("benny1").Balance = 5000;
         }
         public string RemoveHTMLfromString(string s)
         {

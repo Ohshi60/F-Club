@@ -12,7 +12,7 @@ namespace F_Club
         {
             return "Deposit: " + this.Amount.ToString() + transactionUser.ToString() + Date.ToShortDateString() + TransactionID.ToString();
         }
-        public void Execute()
+        public override void Execute()
         {
                 transactionUser.Balance += Amount;
         }   

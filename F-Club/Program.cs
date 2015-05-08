@@ -25,7 +25,8 @@ namespace F_Club
             Console.WriteLine("Balance of " + u2.ToString() + ":  {0}", u2.Balance/100);
             Stregsystem s = new Stregsystem();
             StregsystemCLI cli = new StregsystemCLI(s);
-            cli.Start();
+            StregsystemCommandParser parser = new StregsystemCommandParser(s, cli);
+            cli.Start(parser);
             
             Console.ReadKey();
         }
