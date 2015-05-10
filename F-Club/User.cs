@@ -50,7 +50,7 @@ namespace F_Club
         }
         public override string ToString()
         {
-            string userinfo = _firstName + " " + _lastName + " " + _email;
+            string userinfo = _firstName + " " + _lastName + " " + _email + " Balance: " + ((double)Balance/100).ToString();
             return userinfo;
         }
         public int Balance { 

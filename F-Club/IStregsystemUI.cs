@@ -14,7 +14,7 @@ namespace F_Club
         void DisplayTooManyArgumentsError();
         void DisplayAdminCommandNotFoundMessage();
         void DisplayUserBuysProduct(BuyTransaction transaction);
-        void DisplayUserBuysProduct(int count);
+        void DisplayUserBuysProduct(int count, BuyTransaction transaction);
         void Close();
         void DisplayInsufficientCash();
         void DisplayGeneralError(string errorString);

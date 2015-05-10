@@ -8,18 +8,13 @@ namespace F_Club
 {
     class StregsystemCLI : IStregsystemUI
     {
-        bool CLIactive;
+        bool CLIactive = true;
         Stregsystem system;
         public void Start(StregsystemCommandParser parser)
         {
-            bool CLIactive = true;
-            while(CLIactive)
-            { 
-            List<Product> activeProducts = new List<Product>(system.GetActiveProducts());
-            foreach(Product product in activeProducts)
+            while(this.CLIactive == true)
             {
-                Console.WriteLine(product.ToString());
-            }
+            DisplayActiveProducts();
             string command = Console.ReadLine();
             parser.ParseCommand(command);
             }
@@ -60,14 +55,14 @@ namespace F_Club
             Console.WriteLine(transaction.ToString());
         }
 
-        public void DisplayUserBuysProduct(int count)
+        public void DisplayUserBuysProduct(int count, BuyTransaction transaction)
         {
-            Console.WriteLine("Et eller andet - hvem fanden ved hvad fanden du har tænkt");
+            Console.WriteLine("You've bought {0} {1} ",count , transaction.ToString());
         }
 
         public void Close()
         {
-            throw new NotImplementedException();
+            CLIactive = false;
         }
 
         public void DisplayInsufficientCash()
@@ -83,7 +78,11 @@ namespace F_Club
 
         public void DisplayActiveProducts()
         {
-            throw new NotImplementedException();
+            List<Product> activeProducts = new List<Product>(system.GetActiveProducts());
+            foreach (Product product in activeProducts)
+            {
+                Console.WriteLine(product.ToString());
+            }
         }
     }
 }

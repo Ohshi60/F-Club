@@ -28,7 +28,6 @@ namespace F_Club
             StregsystemCommandParser parser = new StregsystemCommandParser(s, cli);
             cli.Start(parser);
             
-            Console.ReadKey();
         }
     }
 }

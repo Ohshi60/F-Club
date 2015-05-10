@@ -35,6 +35,7 @@ namespace F_Club
                 Amount = amount,
                 Date = DateTime.Now,
             };
+            ExecuteTransaction(deposit);
             return deposit;
         }
         public Product GetProduct(int productID)
