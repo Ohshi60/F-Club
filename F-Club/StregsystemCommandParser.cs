@@ -23,6 +23,8 @@ namespace F_Club
                 {":q" , _ => ui.Close()},
                 {":activate" , ID => activationHelper(ID, true)},
                 {":deactivate" , ID => activationHelper(ID, false)},
+                {":crediton" , ID => creditHelper(ID, true)},
+                {":creditoff" , ID => creditHelper(ID, false)},
                 {":addcredits", DepositHelper},
             };
         }
@@ -33,10 +35,12 @@ namespace F_Club
             List<string> inputvariables = command.Split(' ').ToList();
             if (Regex.IsMatch(inputvariables[0], pattern))
             {
-                //ParseCommand(inputvariables[0]);
                 string theOneAndOnlyCommand = inputvariables[0];
-                inputvariables.Remove(theOneAndOnlyCommand);
-                commands[theOneAndOnlyCommand](inputvariables);
+                inputvariables.Remove(theOneAndOnlyCommand); // Seperation of the command from the parameters so we can pass the list as parameters without fear
+                if (commands[theOneAndOnlyCommand] != null)
+                    commands[theOneAndOnlyCommand](inputvariables);
+                else
+                    ui.DisplayAdminCommandNotFoundMessage();
             }
             else
             {
@@ -47,18 +51,22 @@ namespace F_Club
                         if (u != null)
                         {
                             ui.DisplayUserInfo(u.UserName);
+                            List<Transaction> userLatestTransactions = new List<Transaction>(system.GetTransactionList(u));
+                            ui.DisplayUserTransactions(userLatestTransactions);
                         }
                         else
                             ui.DisplayUserNotFound(inputvariables[0]);
                         break;
                     case 2:
-                        Product p1 = system.GetProduct(int.Parse(inputvariables[1]));
                         User u1 = system.GetUser(inputvariables[0]);
+                        Product p1 = system.GetProduct(int.Parse(inputvariables[1]));
                         if ((u1 != null && p1 != null))
                         {
                             BuyTransaction t = system.BuyProduct(u1, p1);
                             system.ExecuteTransaction(t);
                             ui.DisplayUserBuysProduct(t);
+                            if (u1.BalanceWarning)
+                                ui.DisplaySaldoWarning();
                         }
                         break;
                     case 3:
@@ -74,6 +82,8 @@ namespace F_Club
                                 system.ExecuteTransaction(t);
  
                             }
+                            if (u2.BalanceWarning)
+                                ui.DisplaySaldoWarning();
                         }
                         break;
                     default :
@@ -102,14 +112,29 @@ namespace F_Club
             try
             {
                 User u = system.GetUser(inputs[0]);
-                int amount = int.Parse(inputs[1]);
+                int amount = (int.Parse(inputs[1])) * 100;
                 system.AddCreditsToAccount(u, amount);
-#warning Eventuel tilføj en ui kommando der fortæller brugeren om transaktionen
+                                        #warning Eventuel tilføj en ui kommando der fortæller brugeren om transaktionen
             }
             catch (Exception)
             {
                 ui.DisplayGeneralError("Either the user was not found or the amount specified wasnt a valid number - try again fucker");
             }
+        }
+
+        private void creditHelper(List<String> inputs, bool active)
+        {
+            try
+            {
+                int ID = int.Parse(inputs[0]);
+                Product p = system.GetProduct(ID);
+                p.CanBeBoughtOnCredit = active;
+            }
+            catch (Exception)
+            {
+                ui.DisplayGeneralError("Something went wrong with the activation of the product - Are you sure you got the right productID?");
+            }
+
         }
     }
 }

@@ -25,6 +25,11 @@ namespace F_Club
             system = s;
         }
         
+        public void DisplaySaldoWarning()
+        {
+            Console.WriteLine("Your account balance is under 50 DKR");
+        }
+
         public void DisplayUserNotFound(string username)
         {
             Console.WriteLine("Username {0} not found - are you sure you spelled it right???", username);
@@ -67,14 +72,13 @@ namespace F_Club
 
         public void DisplayInsufficientCash()
         {
-            Console.WriteLine("Not enough funds for the purchase - Deposit more money on your account or go home you poor bastard");
+            throw new InsufficientCreditsException("Not enough founds  for the purchase - deposit more money and try again");
         }
 
         public void DisplayGeneralError(string errorString)
         {
             Console.WriteLine(errorString);
         }
-
 
         public void DisplayActiveProducts()
         {
@@ -84,5 +88,11 @@ namespace F_Club
                 Console.WriteLine(product.ToString());
             }
         }
+        public void DisplayUserTransactions(List<Transaction> transactions)
+        {
+            foreach (Transaction transaction in transactions)
+                Console.WriteLine(transaction.ToString());
+        }
+
     }
 }

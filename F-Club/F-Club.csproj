@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="BuyTransaction.cs" />
     <Compile Include="InsertCashTransaction.cs" />
+    <Compile Include="InsufficientCreditsException.cs" />
     <Compile Include="IStregsystemUI.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Program.cs" />
@@ -57,6 +58,9 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="products.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="transactions.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

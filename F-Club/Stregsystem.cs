@@ -12,6 +12,8 @@ namespace F_Club
         private List<User> _users = new List<User>();
         private List<Product> _products = new List<Product>();
         private List<Transaction> _transactions = new List<Transaction>();
+
+
         public BuyTransaction BuyProduct(User user, Product product)
         {
             BuyTransaction bt = new BuyTransaction{ 
@@ -26,6 +28,7 @@ namespace F_Club
         {
             t.Execute();
             _transactions.Add(t);
+            TransactionLogger(t);
         }
         public InsertCashTransaction AddCreditsToAccount(User user, int amount)
         {
@@ -86,6 +89,12 @@ namespace F_Club
                     _products.Add(stringToProduct(line));
                 }
             }
+        }
+        private void TransactionLogger(Transaction t)
+        {
+            StreamWriter writer = new StreamWriter("C:\\Users\\Yolomancer\\Desktop\\transactions.csv", true);
+            writer.WriteLine(t.ToString());
+            writer.Close();
         }
         public Product stringToProduct(string s)
         {

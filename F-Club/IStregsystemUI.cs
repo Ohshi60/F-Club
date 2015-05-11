@@ -19,5 +19,7 @@ namespace F_Club
         void DisplayInsufficientCash();
         void DisplayGeneralError(string errorString);
         void DisplayActiveProducts();
+        void DisplaySaldoWarning();
+        void DisplayUserTransactions(List<Transaction> transactions);
     }
 }

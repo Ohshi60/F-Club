@@ -63,7 +63,7 @@ namespace F_Club
                 ; 
             }
             set{
-                _balance = value * 100;
+                _balance = value;
                 if(_balance >= 5000)
                 {
                     _balanceWarning = false;
@@ -91,5 +91,7 @@ namespace F_Club
                 throw new ArgumentException("Object is not a user, dumbass");
         }
         public string UserName { get { return _userName; } set { _userName = value; } }
+
+        public bool BalanceWarning { get { return _balanceWarning; } }
     }
 }

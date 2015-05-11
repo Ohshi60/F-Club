@@ -5,3 +5,4 @@ c:\users\yolomancer\documents\visual studio 2013\Projects\F-Club\F-Club\obj\Debu
 c:\users\yolomancer\documents\visual studio 2013\Projects\F-Club\F-Club\obj\Debug\F-Club.pdb
 C:\Users\Yolomancer\documents\visual studio 2013\Projects\F-Club\F-Club\bin\Debug\products.csv
 C:\Users\Yolomancer\documents\visual studio 2013\Projects\F-Club\F-Club\obj\Debug\F-Club.csprojResolveAssemblyReference.cache
+C:\Users\Yolomancer\documents\visual studio 2013\Projects\F-Club\F-Club\bin\Debug\transactions.csv
