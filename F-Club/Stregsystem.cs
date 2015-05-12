@@ -16,14 +16,19 @@ namespace F_Club
 
         public BuyTransaction BuyProduct(User user, Product product)
         {
+            //test for om produktet er aktivt og kast en ProductNotActiveException
             BuyTransaction bt = new BuyTransaction{ 
                 Product = product,
                 Amount = product.Price,
                 transactionUser = user,
                 Date = DateTime.Now,
             };
-            return bt;
+            if (bt.Product.Active != false)
+                return bt;
+            else
+                throw new ProductNotActiveException();
         }
+        //Hjælpemetode til at udføre transaktioner, den respektive Execute metode og tilføjer transaktionen til listen af transaktioner, hvorefter den også logger vores transaktion
         public void ExecuteTransaction(Transaction t)
         {
             t.setTransactionID();
@@ -43,6 +48,7 @@ namespace F_Club
             ExecuteTransaction(deposit);
             return deposit;
         }
+        //Metode til at hente et produkt baseret på et produktID
         public Product GetProduct(int productID)
         {
             Product found = _products.FirstOrDefault(item => item.ProductID == productID);

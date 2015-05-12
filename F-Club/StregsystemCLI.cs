@@ -72,7 +72,7 @@ namespace F_Club
 
         public void DisplayInsufficientCash()
         {
-            throw new InsufficientCreditsException("Not enough founds  for the purchase - deposit more money and try again");
+            Console.WriteLine("Not enough founds  for the purchase - deposit more money and try again");
         }
 
         public void DisplayGeneralError(string errorString)
@@ -92,6 +92,10 @@ namespace F_Club
         {
             foreach (Transaction transaction in transactions)
                 Console.WriteLine(transaction.ToString());
+        }
+        public void DisplayProductNotActive()
+        {
+            Console.WriteLine("Product not active");
         }
 
     }

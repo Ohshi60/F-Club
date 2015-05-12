@@ -21,5 +21,6 @@ namespace F_Club
         void DisplayActiveProducts();
         void DisplaySaldoWarning();
         void DisplayUserTransactions(List<Transaction> transactions);
+        void DisplayProductNotActive();
     }
 }
