@@ -15,7 +15,7 @@ namespace F_Club
         private int _amount;
         public int Amount { get { return _amount; } set {_amount = value ;} }
         public User transactionUser { get { return _user; } set { if (value != null) _user = value; else throw new ArgumentException("User invalid"); } }
-        public int TransactionID { get { return _transactionID; } set { numberOfTransactions++; _transactionID = numberOfTransactions; } }
+        public int TransactionID { get { return _transactionID; } set { _transactionID = value; } }
         public DateTime Date { get { return _date; } set { _date = value; } }
 
         public override string ToString()
@@ -25,6 +25,11 @@ namespace F_Club
         public virtual void Execute()
         {
 
+        }
+        public void setTransactionID()
+        {
+            _transactionID = numberOfTransactions;
+            numberOfTransactions++;
         }
     }
 }

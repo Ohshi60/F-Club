@@ -51,7 +51,11 @@ namespace F_Club
                         if (u != null)
                         {
                             ui.DisplayUserInfo(u.UserName);
-                            List<Transaction> userLatestTransactions = new List<Transaction>(system.GetTransactionList(u));
+                            List<Transaction> userLatestTransactions = new List<Transaction>(system.GetTransactionList(u))
+                                .OrderByDescending(t => t.Date)
+                                .Take(10)
+                                .ToList();
+
                             ui.DisplayUserTransactions(userLatestTransactions);
                         }
                         else

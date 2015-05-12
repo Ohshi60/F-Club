@@ -26,6 +26,7 @@ namespace F_Club
         }
         public void ExecuteTransaction(Transaction t)
         {
+            t.setTransactionID();
             t.Execute();
             _transactions.Add(t);
             TransactionLogger(t);
@@ -37,6 +38,7 @@ namespace F_Club
                 transactionUser = user,
                 Amount = amount,
                 Date = DateTime.Now,
+                
             };
             ExecuteTransaction(deposit);
             return deposit;
