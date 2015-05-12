@@ -73,12 +73,14 @@ namespace F_Club
 
         public override bool Equals(object obj)
         {
-            int o = ((User)obj)._userID;
-            return _userID == o;
+            string o = ((User)obj)._userName;
+            
+            return _userName.Equals(o);
+
         }
         public override int GetHashCode()
         {
-            return base.GetHashCode();
+            return _userName.GetHashCode();
         }
 
         public int CompareTo(object obj)
