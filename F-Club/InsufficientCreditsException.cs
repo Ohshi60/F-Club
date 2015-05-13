@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace F_Club
 {
-    class InsufficientCreditsException : Exception
+    class InsufficientCreditsException : Exception //Exception til at fange når et køb overskrider brugerens saldo
     {
         public InsufficientCreditsException()
         {

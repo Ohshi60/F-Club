@@ -34,11 +34,13 @@ namespace F_Club
             if (userNameValidator(userName))
                 _userName = userName;
         }
+        //Vi bruger regex til at validere vores username
         public bool userNameValidator(string userName)
         {
             string pattern = @"[a-z0-9_]+";
             return Regex.IsMatch(userName, pattern);
         }
+        //Det samme her, så bruges Regex til at validere email
         public bool emailValidator(string email)
         {
             string pattern1 = @"^[a-zA-Z0-9-\\._]+@[a-zA-Z0-9][A-Za-z0-9-].+[a-zA-Z0-9]+$";
@@ -70,7 +72,7 @@ namespace F_Club
                 }
             }
         }
-
+        //Vi laver en content-equals på en streng(username)
         public override bool Equals(object obj)
         {
             string o = ((User)obj)._userName;
@@ -78,6 +80,7 @@ namespace F_Club
             return _userName.Equals(o);
 
         }
+        //Vi bruger en strengs indbyggede GetHashCode, og kalder det på username i relation til vores equals
         public override int GetHashCode()
         {
             return _userName.GetHashCode();
@@ -95,5 +98,7 @@ namespace F_Club
         public string UserName { get { return _userName; } set { _userName = value; } }
 
         public bool BalanceWarning { get { return _balanceWarning; } }
+
+        public string Email { get { return _email; }}
     }
 }

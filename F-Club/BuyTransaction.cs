@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace F_Club
 {
+    //en subklasse til vores transaction - der står for alle Køb - indeholder en override ToString og en override Execute
     class BuyTransaction : Transaction
     {
         private Product _product;

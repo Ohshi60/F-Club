@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace F_Club
 {
-    class StregsystemCLI : IStregsystemUI
+    class StregsystemCLI : IStregsystemUI //CLI'en....Nedarver fra vores UI - Alle outputs til brugeren foregår herindefra. 
     {
         bool CLIactive = true;
         Stregsystem system;

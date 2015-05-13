@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace F_Club
 {
-    interface IStregsystemUI
+    interface IStregsystemUI //Vores interface der fortæller vores CLI hvilke metoder den skal have
     {
         void DisplayUserNotFound(string username);
         void DisplayProductNotFound(string productname);

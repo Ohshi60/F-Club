@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="false">
+  <TopNode>[0-1003]C:\Users\Yolomancer\Documents\Visual Studio 2013\Projects\F-Club\FClubTest\bin\Debug\FClubTest.dll</TopNode>
+  <SelectedNode>[0-1002]FClubTest.UserTest.ValidatesEmail_StringEmail_False</SelectedNode>
+  <ExcludeCategories>false</ExcludeCategories>
+  <Nodes>
+    <Node UniqueName="[0-1003]C:\Users\Yolomancer\Documents\Visual Studio 2013\Projects\F-Club\FClubTest\bin\Debug\FClubTest.dll" Expanded="true" />
+    <Node UniqueName="[0-1004]FClubTest" Expanded="true" />
+    <Node UniqueName="[0-1000]FClubTest.UserTest" Expanded="true" />
+  </Nodes>
+</VisualState>

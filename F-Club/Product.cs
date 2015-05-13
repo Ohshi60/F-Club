@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace F_Club
 {
-    class Product
+    class Product //Produktklassen der indeholder private variabler og properties inklusiv en ToString vi har formateret for at få det udskrevet pænt når vi lister vores produkter 
     {
         private int _productID;
         private string _productName;

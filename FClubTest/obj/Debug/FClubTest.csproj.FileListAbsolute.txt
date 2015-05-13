@@ -1,0 +1,11 @@
+C:\Users\Yolomancer\documents\visual studio 2013\Projects\F-Club\FClubTest\bin\Debug\products.csv
+C:\Users\Yolomancer\documents\visual studio 2013\Projects\F-Club\FClubTest\bin\Debug\transactions.csv
+C:\Users\Yolomancer\documents\visual studio 2013\Projects\F-Club\FClubTest\bin\Debug\FClubTest.dll
+C:\Users\Yolomancer\documents\visual studio 2013\Projects\F-Club\FClubTest\bin\Debug\FClubTest.pdb
+C:\Users\Yolomancer\documents\visual studio 2013\Projects\F-Club\FClubTest\bin\Debug\F-Club.exe
+C:\Users\Yolomancer\documents\visual studio 2013\Projects\F-Club\FClubTest\bin\Debug\nunit.framework.dll
+C:\Users\Yolomancer\documents\visual studio 2013\Projects\F-Club\FClubTest\bin\Debug\F-Club.pdb
+C:\Users\Yolomancer\documents\visual studio 2013\Projects\F-Club\FClubTest\bin\Debug\nunit.framework.xml
+C:\Users\Yolomancer\documents\visual studio 2013\Projects\F-Club\FClubTest\obj\Debug\FClubTest.csprojResolveAssemblyReference.cache
+C:\Users\Yolomancer\documents\visual studio 2013\Projects\F-Club\FClubTest\obj\Debug\FClubTest.dll
+C:\Users\Yolomancer\documents\visual studio 2013\Projects\F-Club\FClubTest\obj\Debug\FClubTest.pdb

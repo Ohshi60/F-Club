@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace F_Club
 {
-    class ProductNotActiveException : Exception
+    class ProductNotActiveException : Exception //Exception klasse til at fange når der forsøges at købe et produkt der ikke er aktivt
     {
         public ProductNotActiveException()
         {}

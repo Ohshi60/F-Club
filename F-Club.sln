@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "F-Club", "F-Club\F-Club.csproj", "{8323BB91-01F3-460A-952D-CFBCA3303DCC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FClubTest", "FClubTest\FClubTest.csproj", "{B5755FFB-4963-4A70-9D4A-410F1ED0E522}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{8323BB91-01F3-460A-952D-CFBCA3303DCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8323BB91-01F3-460A-952D-CFBCA3303DCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8323BB91-01F3-460A-952D-CFBCA3303DCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5755FFB-4963-4A70-9D4A-410F1ED0E522}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5755FFB-4963-4A70-9D4A-410F1ED0E522}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5755FFB-4963-4A70-9D4A-410F1ED0E522}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5755FFB-4963-4A70-9D4A-410F1ED0E522}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

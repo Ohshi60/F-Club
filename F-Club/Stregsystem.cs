@@ -13,7 +13,7 @@ namespace F_Club
         private List<Product> _products = new List<Product>();
         private List<Transaction> _transactions = new List<Transaction>();
 
-
+        //Metode til at udføre et køb, den returnerer en transaktion som senere kan færdiggøres med hjælpemetoden ExecuteTransaction
         public BuyTransaction BuyProduct(User user, Product product)
         {
             //test for om produktet er aktivt og kast en ProductNotActiveException
@@ -28,7 +28,7 @@ namespace F_Club
             else
                 throw new ProductNotActiveException();
         }
-        //Hjælpemetode til at udføre transaktioner, den respektive Execute metode og tilføjer transaktionen til listen af transaktioner, hvorefter den også logger vores transaktion
+        //Hjælpemetode til at udføre transaktioner, kalder den respektive Execute metode og tilføjer transaktionen til listen af transaktioner, hvorefter den også logger vores transaktion
         public void ExecuteTransaction(Transaction t)
         {
             t.setTransactionID();
@@ -49,6 +49,12 @@ namespace F_Club
             return deposit;
         }
         //Metode til at hente et produkt baseret på et produktID
+
+        /// <summary>
+        /// Returnerer et produkt baseret på produktID
+        /// </summary>
+        /// <param name="productID"></param>
+        /// <returns></returns>
         public Product GetProduct(int productID)
         {
             Product found = _products.FirstOrDefault(item => item.ProductID == productID);
@@ -85,8 +91,10 @@ namespace F_Club
             }
             return ActiveProducts;
         }
+        //Denne metode tager vores products.csv fil med produktdata og læser det ind i vores liste af products
         public void LoadCatalogue()
         {
+            //Der bruges en regex til at kontrollere at hver linie i tekstfilen opfylder vores krav. På denne måde slipper vi for at læse bl.a. første linie ind
             string line = "";
             string pattern = @"^\d+;[^;]+;\d+;(0|1);";
             StreamReader reader = new StreamReader("products.csv");
@@ -98,12 +106,14 @@ namespace F_Club
                 }
             }
         }
+        //Hjælpemetode til at logge vores transaktioner i en tekst-fil - bruges i ExecuteTransaction
         private void TransactionLogger(Transaction t)
         {
             StreamWriter writer = new StreamWriter("C:\\Users\\Yolomancer\\Desktop\\transactions.csv", true);
             writer.WriteLine(t.ToString());
             writer.Close();
         }
+        //Hjælpemetode der bruges af vores LoadCatalogue til at læse strenge ind korrekt til produkter
         public Product stringToProduct(string s)
         {
 
@@ -121,10 +131,11 @@ namespace F_Club
         public Stregsystem()
         {
             this.LoadCatalogue();
-            List<Product> activeProds = new List<Product>(GetActiveProducts());
+            //List<Product> activeProds = new List<Product>(GetActiveProducts());
             _users.Add(new User("Benny","Johnson","abe@kat.dk","benny1"));
             GetUser("benny1").Balance = 5000;
         }
+        //Hjælpemetode til at fjerne html fra produktnavnes strenge
         public string RemoveHTMLfromString(string s)
         {
             string pattern = "<[^>]*>";

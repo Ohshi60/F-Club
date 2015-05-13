@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace F_Club
 {
-    class InsertCashTransaction : Transaction //InsertCash aka deposit. Y U NO CALL IT DEPOSIT?? Im going to the bank to INSERT CASH MOTHERFUCKER >:(
+    class InsertCashTransaction : Transaction //Subklasse til vores transaction klasse - ligesom vores anden klasse har den override på ToString og Execute
     {
         public override string ToString()
         {
